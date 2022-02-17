@@ -46,7 +46,7 @@
       <a style="background-color:  #2dbcfa; border: none !important" href="https://drive.google.com/file/d/1UL5CKgF7c0My6-b45S3ICs9Z0KYZqoWw/view?usp=sharing" class="btn btn-lg btn-secondary fw-bold">Google Диск</a>
     </p>
     <p class="lead d-inline">
-      <a style="background-color:  #ff5959; color: white !important; border: none !important" href="https://disk.yandex.ru/d/cMSQv5tYS_UxAw" class="btn btn-lg btn-secondary fw-bold">Yandex Диск</a>
+      <a style="background-color:  #ff5959; color: white !important; border: none !important" href="https://disk.yandex.ru/d/cMSQv5tYS_UxAw" class="btn btn-lg btn-secondary fw-bold yandex">Yandex Диск</a>
     </p>
     </div>
     
@@ -59,20 +59,19 @@
     </div>
     </div>
     <div id="scene">
-      <div class="bg" data-depth="0.25"></div>
+      <div class="bg" data-depth="0.2"></div>
     </div>
     
     
 
   <script type="text/javascript">
-    function isMobile() { 
-      return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
-    }
-
-    if not isMobile() {
-      var scene = document.getElementById('scene');
-      var parallaxInstance = new Parallax(scene);
-      parallaxInstance.invert(false, false);
+    var scene = document.getElementById('scene');
+    var parallaxInstance = new Parallax(scene);
+    parallaxInstance.invert(false, false);
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      document.querySelector('.bg').style.width="400vw";
+      document.querySelector('.bg').style.height="400vh";
+      document.querySelector('.yandex').style.marginTop="10px";
     }
   </script>
   </body>
